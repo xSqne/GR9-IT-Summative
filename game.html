@@ -3,13 +3,20 @@
 <head>
 	<link rel="stylesheet" href="style.css">
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+
+	<script>
+	function getRandomNum() {
+		return Math.floor(Math.random() * 101);
+	}
+	</script>
+
 </head>
 
 <body> <!--Main site content begins here-->
 
 <div class="navbar">
 	<a href="home.html">Home</a>
-  <a href="internet.html">School</a>
+  <a href="internet.html">Internet</a>
 	<a href="keywords.html">Keywords</a>
   <a href="game.html">Game</a>
 </div>
@@ -17,18 +24,32 @@
 <hr>
 
 <div id="header"> <!--Main header-->
-  <h1>Unit 1 Summative: Networking and the Internet</h1>
+  <h1>Guess the number!</h1>
 </div>
 
 <hr>
 
 <div id="content"> <!--Main content-->
-  <h2>Martin's awesome website</h2>
-  <p>This website will be explaining what I learned in this first unit.</p>
-	<p>This is a photo of a cat.<p>
-	<img src="img/cat.png" alt="cat">
-	<p>Just because I can.<p>
-	<a href="insert rick asteky thingy" style="color: #ffffff">If you hate cats, click me. (And yes, I am a link)</a>
+  <p>The goal is to guess a number between 1-100 that is randomly generated.</p>
+	<p>You will get 15 tries.</p>
+	<p>After each guess, it will say if you are either higher or lower than the number.</p>
+	<p>Have fun!</p>
+	<br>
+	<hr>
+	<br>
+
+	<input id="guess" value="Guess Here!">
+	<button type="button" onclick="game()">Sumbit</button>
+	<script>
+	function game() {
+		var random = getRandomNum();
+		var guess = document.getElementById("guess").value;
+
+		alert(guess);
+
+	}
+
+	</script>
 </div>
 
 </body>
