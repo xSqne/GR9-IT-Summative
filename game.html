@@ -3,8 +3,6 @@
 <head>
 	<link rel="stylesheet" href="style.css">
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
-
-	<script src="math.js" type="text/javascript"></script>
 </head>
 
 <body> <!--Main site content begins here-->
@@ -14,6 +12,10 @@
   <a href="internet.html">Internet</a>
 	<a href="keywords.html">Keywords</a>
   <a href="game.html">Game</a>
+
+	<div class="logo">
+		<p>Martin's Website</p>
+	</div>
 </div>
 
 <hr>
@@ -26,7 +28,7 @@
 
 <div id="content"> <!--Main content-->
   <p>The goal is to guess a number between 1-100 that is randomly generated.</p>
-	<p>You will get 10 tries.</p>
+	<p>You will get 7 tries.</p>
 	<p>After each guess, it will say if you are either higher or lower than the number.</p>
 	<p>Have fun!</p>
 	<p>(Type 'cancel' to quit the game at any time!)</p>
@@ -34,13 +36,13 @@
 	<hr>
 	<br>
 
-	<button type="button" onclick="game()" >Click Me to Start the Game!</button>
+	<button type="button" onclick="game()">Click Me to Start the Game!</button>
 	<hr>
 	<p>A cat for good luck, of course.</p>
 	<img src="img/cat.png" alt="cat">
 	<script>
 	function game() {
-		var tries = 10;
+		var tries = 7;
 		var guess;
 		var random = Math.floor(Math.random() * 101) + 1;
 
@@ -62,7 +64,7 @@
 
 					}
 					if (guess == random) {
-						tries = 11 - tries;
+						tries = 8 - tries;
 						alert("Congratulations, you got the number correct in" + " " + tries + " " + "attemps!");
 						break;
 					}
