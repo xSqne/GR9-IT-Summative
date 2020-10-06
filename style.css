@@ -19,8 +19,6 @@ body
 .navbar
 {
 	background: transparent;
-	border-style: solid;
-	border-width: 2%;
 	overflow: hidden;
 
 }
@@ -34,7 +32,7 @@ body
 	font-family: Roboto, Verdana, sans-serif;
 	text-align: center;
 	padding: 15px 15px;
-	font-size: 17px;
+	font-size: 16px;
 }
 
 .navbar a:hover
@@ -42,13 +40,6 @@ body
 	background-color: black;
 	border: 2px solid white;
 	color: white;
-}
-
-.center
-{
-	display: block;
-	margin: auto;
-	width: 75%;
 }
 
 #content /*Styles for Main Content area*/

@@ -4,12 +4,7 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 
-	<script>
-	function getRandomNum() {
-		return Math.floor(Math.random() * 101);
-	}
-	</script>
-
+	<script src="math.js" type="text/javascript"></script>
 </head>
 
 <body> <!--Main site content begins here-->
@@ -34,19 +29,56 @@
 	<p>You will get 15 tries.</p>
 	<p>After each guess, it will say if you are either higher or lower than the number.</p>
 	<p>Have fun!</p>
+	<p>(Type 'cancel' to quit the game at any time!)</p>
 	<br>
 	<hr>
 	<br>
 
-	<input id="guess" value="Guess Here!">
-	<button type="button" onclick="game()">Sumbit</button>
+	<button type="button" onclick="game()" >Click Me to Start the Game!</button>
+	<hr>
+	<p>A cat for good luck, of course.</p>
+	<img src="img/cat.png" alt="cat">
 	<script>
 	function game() {
-		var random = getRandomNum();
-		var guess = document.getElementById("guess").value;
+		var tries = 10;
+		var guess;
+		var random = Math.floor(Math.random() * 101) + 1;
 
-		alert(guess);
+		while (tries > 0) {
+			guess = prompt("Your Guess: ", guess);
+			if (guess == 'cancel') {
+				alert("Quitting game..");
+				break;
+			} else if (isFinite(guess)) {
+				guess = +guess;
+				if (guess >= 1 && guess <= 100) {
+					if (guess > random) {
+						tries = tries - 1
+						alert("The number is lower. You have " + tries+ " attemps left.");
+					}
+					if (guess < random) {
+						tries = tries - 1;
+						alert("The number is higher. You have " + tries+ " attempts left.");
 
+					}
+					if (guess == random) {
+						tries = 11 - tries;
+						alert("Congratulations, you got the number correct in" + " " + tries + " " + "attemps!");
+						break;
+					}
+
+				} else {
+					alert("You must enter a number between 1-100!");
+				}
+
+			} else {
+				alert("You must enter a number!");
+			}
+		}
+
+		if (tries == 0) {
+			alert("Oops, you ran out of attemps. The number was" + " " + random + ".");
+		}
 	}
 
 	</script>
